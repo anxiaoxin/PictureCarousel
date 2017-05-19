@@ -17,14 +17,13 @@
 		createElement(container).forEach(function(item){
 			container.appendChild(item);
 		})
-		
 	}
 
 	//创建前一帧，下一帧，以及圆圈元素
 	function createElement(container){
 		var img = container.children[0];
 		var num = img.children.length;
-		if(num){
+		if(!num){
 			console.log("There's no img");
 			return ;
 		}
