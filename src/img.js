@@ -4,9 +4,13 @@
 		var arrayContainer = [].slice.call(document.getElementsByClassName("container"));
 
 		//为每个图片轮播模块添加下一帧与前一帧按钮以及事件
-		arrayContainer.forEach(function(item){
-			addChild(item);
-		});
+		if(arrayContainer.length){
+			arrayContainer.forEach(function(item){
+				addChild(item);
+			});
+		}else{
+			console.log("There's no div.container");
+		}
 	}
 
 	function addChild(container){
@@ -18,6 +22,12 @@
 
 	//创建前一帧，下一帧，以及圆圈元素
 	function createElement(container){
+		var img = container.children[0];
+		var num = img.children.length;
+		if(num){
+			console.log("There's no img");
+			return ;
+		}
 		var next = document.createElement("div");
 		var front = document.createElement("div");
 		var circle = document.createElement("div");
@@ -25,8 +35,6 @@
 		front.innerHTML = '<i class="fa fa-chevron-left fa-4x"></i>';
 		next.style = "position:absolute;right:0;top:50%;cursor:pointer;background-color:rgba(96,96,96,0.5);";
 		front.style = "position:absolute;left:0;top:50%;cursor:pointer;background-color:rgba(96,96,96,0.5);";
-		img = container.children[0];
-		var num = img.children.length;
 		for(var i = 0; i < num; i++){
 			circle.appendChild(document.createElement("div"));
 		}
