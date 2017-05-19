@@ -3,7 +3,7 @@
 图片轮播，大家经常谈起的一个功能。这里首次尝试去写一个所谓的“插件”，基本思想是使使用者尽可能少的去写代码，只需写一些基本的HTML。这里展示的是两种轮播方式，一种是图片有叠加的，一种是无叠加的。
 
 #### 无叠加轮播截图
-！[无叠加轮播截图](https://github.com/anxiaoxin/PictureCarousel/blob/master/src/img/%E6%97%A0%E5%8F%A0%E5%8A%A0%E6%88%AA%E5%9B%BE.jpg)
+![无叠加轮播截图](https://github.com/anxiaoxin/PictureCarousel/blob/master/src/img/%E6%97%A0%E5%8F%A0%E5%8A%A0%E6%88%AA%E5%9B%BE.jpg)
 
 
 #### 有叠加截图（暂无）
