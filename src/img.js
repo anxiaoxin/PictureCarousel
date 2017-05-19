@@ -1,10 +1,13 @@
 (function(){
 	//支持一个页面中多处使用图片轮播
-	var arrayContainer = [].slice.call(document.getElementsByClassName("container"));
-	//为每个图片轮播模块添加下一帧与前一帧按钮以及事件
-	arrayContainer.forEach(function(item){
-		addChild(item);
-	});
+	window.picInit = function(){
+		var arrayContainer = [].slice.call(document.getElementsByClassName("container"));
+
+		//为每个图片轮播模块添加下一帧与前一帧按钮以及事件
+		arrayContainer.forEach(function(item){
+			addChild(item);
+		});
+	}
 
 	function addChild(container){
 		createElement(container).forEach(function(item){
@@ -28,12 +31,12 @@
 			circle.appendChild(document.createElement("div"));
 		}
 		circle.className = "circle";
-		addEvent(img,front,next,num,circle);
+		addEvent(img,front,next,num,circle,container);
 		return [next,front,circle];
 	}	
 
 	//定义事件
-	function addEvent(img,front,next,num,circle){
+	function addEvent(img,front,next,num,circle,container){
 		var circles = [].slice.call(circle.children);
 		circles[0].className = "active";
 		next.onclick = function(){
@@ -65,13 +68,13 @@
 		var intervalEvent = setInterval(function(){
 			next.click();
 		},3000);
-		img.onmouseover = function(){
+		container.onmouseover = function(){
 			clearInterval(intervalEvent);
 		}
-		img.onmouseout = function(){
+		container.onmouseout = function(){
 			intervalEvent = setInterval(function(){
 					next.click();
 				},3000);		
 		}
 	}
-})()
+})();
