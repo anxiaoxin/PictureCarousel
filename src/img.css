@@ -1,3 +1,4 @@
+/*无叠加的样式*/
 .container{
 	width: 50%;
 	overflow: hidden;	
@@ -18,11 +19,36 @@
 .imageContainer > div > img {
 	width: 100%;
 }
+
+/* 有叠加的样式 */
+.containerOver{
+	width: 1000px;
+	height: 400px;
+	position: relative;	
+	margin: 0 auto;
+	overflow: hidden;
+}
+.imageContainerOver{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: rgba(150,150,150,0.5);
+}
+.imageContainerOver > img {
+	position: absolute;
+	opacity: 1;		
+	height: 100%;
+	transition: left,height,opacity 0.5s,0.5s,0.5s ease-in,ease-in,ease-in;
+
+}
+
+/*统一样式*/
 .circle{
 	position: absolute;
 	bottom: 10%;
 	width: 100%;
 	text-align: center;
+	z-index: 100;
 }
 .circle > div{
 	margin-left: 5px;
